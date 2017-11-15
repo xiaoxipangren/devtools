@@ -77,7 +77,7 @@ git clone https://github.com/gmarik/vundle.git $vundle
 
 echo "配置vim插件"
 
-vim +PluginInstall +qiut +quit
+vim +PluginInstall +quit +quit
 
 
 path=`pwd`
