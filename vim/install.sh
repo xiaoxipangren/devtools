@@ -87,7 +87,3 @@ cd $home"/.vim/bundle/YouCompleteMe"
 
 cd path
 echo "安装完成,请参考.vimrc中的说明文件使用快捷键"
-
-
-
-
