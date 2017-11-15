@@ -8,10 +8,10 @@
 
 #安装依赖库
 
-#sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
-#    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
-#    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
-#   python3-dev ruby-dev lua5.1 lua5.1-dev git
+sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+    libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
+    libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
+   python3-dev ruby-dev lua5.1 lua5.1-dev git
 
 
 #卸载旧版本vim
@@ -28,11 +28,16 @@ do
 done
 
 ISF=$IFS_OLD
-echo $vim_old
 
-#sudo dpkg -P vim_old  
+sudo dpkg -P vim_old  
 
 #下载源码
+
+if [ -d vim ]
+then
+    rm -rf vim
+fi
+
 git clone https://github.com/vim/vim.git
 echo "源码下载完成，开始进行编译安装。此过程将视电脑配置花费1-2个小时，请耐心等待......"
 
@@ -51,19 +56,37 @@ sudo make install
 
 echo "编译安装完成，将进行vim安装后配置"
 
+cd ..
+
 #安装后配置
 home="/home/"`whoami`
 vimrc=$home"/.vimrc"
 
 echo "备份原.vimrc至.vimrc.bak"
 cp $vimrc ${vimrc}".bak" 
-cp ".vimrc" $home
+cp .vimrc $home
+
+vundle=$home"/.vim/bundle/Vundle.vim"
+if [ -d $vundle ];
+then
+    rm -rf $vundle
+fi
 
 echo "下载Vundle插件"
-git clone https://github.com/gmarik/vundle.git ${home}"/.vim/bundle/Vundle.vim"
+git clone https://github.com/gmarik/vundle.git $vundle
+
+echo "配置vim插件"
+
+vim +PluginInstall +qiut +quit
 
 
+path=`pwd`
+echo "配置YCM插件"
+cd $home"/.vim/bundle/YouCompleteMe"
+./install.py
 
+cd path
+echo "安装完成,请参考.vimrc中的说明文件使用快捷键"
 
 
 
