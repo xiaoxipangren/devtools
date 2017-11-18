@@ -42,7 +42,10 @@ git clone https://github.com/vim/vim.git
 echo "源码下载完成，开始进行编译安装。此过程将视电脑配置花费1-2个小时，请耐心等待......"
 
 cd vim
+
 #编译安装
+
+echo "默认执行基于python2的安装，注意由于系统的限制，ubuntu上请在python2/python3中选择一种"
 ./configure --with-features=huge \
             --enable-multibyte \
             --enable-rubyinterp \
@@ -83,6 +86,7 @@ vim +PluginInstall +quit +quit
 path=`pwd`
 echo "配置YCM插件"
 cd $home"/.vim/bundle/YouCompleteMe"
+#YCM本身支持python2或者python3，将视系统的python环境自动配置YCM的python解释器
 ./install.py
 
 cd path

@@ -1,11 +1,14 @@
 "快捷操作映射
 let mapleader=" "
 "set encoding="utf-8"
-nmap <leader>w :w<CR>
-nmap <leader>q :q<CR>
-nmap <leader>wq :wq<CR>
-nmap <leader>o :CtrlP<CR>
-nmap <leader>ls :ls<CR>
+
+"为防止在有些环境中无法识别，请务必将所有前导符写成<Leader>
+"而非<Leader>
+nmap <Leader>w :w<CR>
+nmap <Leader>q :q<CR>
+nmap <Leader>wq :wq<CR>
+nmap <Leader>o :CtrlP<CR>
+nmap <Leader>ls :ls<CR>
 inoremap jj <ESC>
 inoremap <c-h> <left>
 inoremap <c-l> <right>
@@ -30,12 +33,12 @@ set foldlevelstart=99       " 打开文件是默认不折叠代码
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 "窗口快捷键映射
-nmap <leader>ws <C-w>s
-nmap <leader>wv <C-w>v
-nmap <leader>wh  <C-w>h
-nmap <leader>wj <C-w>j
-nmap <leader>wk <C-w>k
-nmap <leader>wl <C-w>l
+nmap <Leader>ws <C-w>s
+nmap <Leader>wv <C-w>v
+nmap <Leader>wh  <C-w>h
+nmap <Leader>wj <C-w>j
+nmap <Leader>wk <C-w>k
+nmap <Leader>wl <C-w>l
 
 
 "允许退格删除和tab操作
@@ -115,24 +118,24 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 "启用tab功能
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
-nmap <leader>th <Plug>AirlineSelectPrevTab
-nmap <leader>tl <Plug>AirlineSelectNextTab
+nmap <Leader>1 <Plug>AirlineSelectTab1
+nmap <Leader>2 <Plug>AirlineSelectTab2
+nmap <Leader>3 <Plug>AirlineSelectTab3
+nmap <Leader>4 <Plug>AirlineSelectTab4
+nmap <Leader>5 <Plug>AirlineSelectTab5
+nmap <Leader>6 <Plug>AirlineSelectTab6
+nmap <Leader>7 <Plug>AirlineSelectTab7
+nmap <Leader>8 <Plug>AirlineSelectTab8
+nmap <Leader>9 <Plug>AirlineSelectTab9
+nmap <Leader>th <Plug>AirlineSelectPrevTab
+nmap <Leader>tl <Plug>AirlineSelectNextTab
 
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 
 " YouCompleteMe配置
 let g:ycm_global_ycm_extra_conf='~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'   "配置默认的ycm_extra_conf.py
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>   "按jd 会跳转到定义
+nnoremap <Leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>   "按jd 会跳转到定义
 let g:ycm_confirm_extra_conf=0    "打开vim时不再询问是否加载ycm_extra_conf.py配置
 let g:ycm_collect_identifiers_from_tag_files = 1 "使用ctags生成的tags文件
 let g:ycm_error_symbol='>>'
@@ -193,7 +196,7 @@ let g:neocomplcache_enable_at_startup = 1
 
 "Autoformat配置
 noremap <F3> :Autoformat<CR>
-nnoremap <leader>fa gg=G :retab<CR> :RemoveTrailingSpaces<CR>
+nnoremap <Leader>fa gg=G :retab<CR> :RemoveTrailingSpaces<CR>
 "EasyMotion配置
 map <Leader>f <Plug>(easymotion-w)
 map <Leader>b <Plug>(easymotion-b)
