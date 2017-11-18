@@ -60,7 +60,7 @@ sudo make install
 echo "编译安装完成，将进行vim安装后配置"
 
 cd ..
-
+rm -rf vim
 #安装后配置
 home="/home/"`whoami`
 vimrc=$home"/.vimrc"
