@@ -9,8 +9,13 @@ chsh -s /bin/zsh
 
 echo "安装oh-my-zsh配置zsh"
 
+if [ -d $HOME/.oh-my-zsh ]
+then
+    rm -rf $HOME/.oh-my-zsh 
+fi
+
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh 
 
-cp $HOme/.zshrc $HOME/.zshrc.bak
+cp $HOME/.zshrc $HOME/.zshrc.bak
 
 cp .zshrc $HOME/.zshrc
