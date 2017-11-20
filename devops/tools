@@ -1,0 +1,9 @@
+server=192.168.110.250
+jenkins:
+    address:$server:1800
+    Id/passwd:admin/zhqadmin
+    email:zhenghq@nationalchip.com
+nexus:
+    address:$server:1801
+    Id/passwd:admin/zhqadmin
+    email:zhenghq@nationalchip.com
