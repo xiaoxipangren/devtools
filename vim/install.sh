@@ -27,6 +27,7 @@ do
     vim_old=${vim_old}" "${arr[1]}
 done
 
+echo ${vim_old}
 ISF=$IFS_OLD
 
 sudo dpkg -P vim_old  
