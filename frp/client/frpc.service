@@ -1,0 +1,10 @@
+[Unit]
+Description=frpc
+After=network.target
+ 
+[Service]
+ExecStart=/usr/local/frpc/start.sh
+ 
+[Install]
+WantedBy=multi-user.target
+
