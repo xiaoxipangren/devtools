@@ -1,6 +1,6 @@
 "快捷操作映射
 let mapleader=" "
-"set encoding="utf-8"
+set encoding=utf-8
 
 "为防止在有些环境中无法识别，请务必将所有前导符写成<Leader>
 "而非<Leader>
