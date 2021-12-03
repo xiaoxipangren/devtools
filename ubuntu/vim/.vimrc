@@ -173,7 +173,7 @@ let g:syntastic_check_on_wq = 0
 
 
 "python with virtualenv support
-py << EOF
+python3 << EOF
 import os
 import sys
 if 'VIRTUAL_ENV' in os.environ:

@@ -5,7 +5,7 @@ echo "安装zsh"
 sudo apt install zsh
 
 #切换默认shell至zsh
-chsh -s /bin/zsh `whoami` 
+sudo chsh -s /bin/zsh `whoami` 
 
 echo "安装oh-my-zsh配置zsh"
 
