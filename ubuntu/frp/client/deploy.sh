@@ -9,9 +9,7 @@ if [ ! -d $dir  ];then
    sudo mkdir $dir
 fi
 
-cp config.ini start.sh $dir/
-
-cp linux/frpc $dir/
+cp config.ini frpc start.sh $dir/
 
 cp frpc.service  $service
 

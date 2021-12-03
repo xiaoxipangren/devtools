@@ -134,9 +134,6 @@ setopt AUTO_PUSHD
 #相同的历史路径只保留一个
 setopt PUSHD_IGNORE_DUPS
  
-#在命令前添加空格，不将此命令添加到纪录文件中
-#setopt HIST_IGNORE_SPACE
-#}}}
  
 #每个目录使用独立的历史纪录{{{
 cd() {
@@ -207,11 +204,6 @@ setopt AUTO_MENU
  
 autoload -U compinit
 compinit
- 
-#自动补全缓存
-#zstyle ':completion::complete:*' use-cache on
-#zstyle ':completion::complete:*' cache-path .zcache
-#zstyle ':completion:*:cd:*' ignore-parents parent pwd
  
 #自动补全选项
 zstyle ':completion:*' verbose yes
@@ -334,29 +326,15 @@ alias top10='print -l  ${(o)history%% *} | uniq -c | sort -nr | head -n 10'
  
 #路径别名 {{{
 #进入相应的路径时只要 cd ~xxx
-hash -d A="/media/ayu/dearest"
-hash -d H="/media/data/backup/ayu"
 hash -d E="/etc/"
-hash -d D="/home/ayumi/Documents"
+hash -d D="~/Develop"
 #}}}
  
-##for Emacs {{{
-#在 Emacs终端 中使用 Zsh 的一些设置 不推荐在 Emacs 中使用它
-#if [[ "$TERM" == "dumb" ]]; then
-#setopt No_zle
-#PROMPT='%n@%M %/
-#>>'
-#alias ls='ls -F'
-#fi
-#}}}
  
 #{{{自定义补全
 #补全 ping
 zstyle ':completion:*:ping:*' hosts 192.168.1.{1,50,51,100,101} www.google.com
  
-#补全 ssh scp sftp 等
-#zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
-#}}}
  
 #{{{ F1 计算器
 arith-eval-echo() {
