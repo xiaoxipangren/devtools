@@ -224,6 +224,8 @@ zstyle ':completion::complete:*' '\\'
 #彩色补全菜单
 eval $(dircolors -b)
 export ZLSCOLORS="${LS_COLORS}"
+alias ls='ls -F --show-control-chars --color=auto'
+
 zmodload zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
@@ -306,7 +308,6 @@ bindkey "\e\e" sudo-command-line
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
-alias ls='ls -F --color=auto'
 alias ll='ls -al'
 alias grep='grep --color=auto'
 alias la='ls -a'

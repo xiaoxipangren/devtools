@@ -102,7 +102,7 @@ FINISH="%{$terminfo[sgr0]%}"
 #}}}
  
 #命令提示符
-PROMPT=$(echo "$CYAN%n$YELLOW@mbp:$GREEN%/")
+PROMPT=$(echo "$CYAN%n$YELLOW@%M:$GREEN%/")
 PROMPT+='%{$reset_color%}$(git_prompt_info)'
 PROMPT+='$_YELLOW>$FINISH' 
  
@@ -119,6 +119,8 @@ export EDITOR=vim
 
 eval $(dircolors -b)
 export ZLSCOLORS="${LS_COLORS}"
+alias ls='ls -F --show-control-chars --color=auto'
+
 zmodload zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
