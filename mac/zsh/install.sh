@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 echo "安装zsh"
-brew install zsh
+#brew install zsh
 brew install coreutils
 #切换默认shell至zsh
 chsh -s /bin/zsh `whoami` 
@@ -14,7 +14,7 @@ then
 fi
 
 git clone git://github.com/robbyrussell/oh-my-zsh.git $HOME/.oh-my-zsh 
+cp robbyrussell.zsh-theme $HOME/.oh-my-zsh/themes
 
 cp $HOME/.zshrc $HOME/.zshrc.bak
-
 cp .zshrc $HOME/.zshrc
