@@ -3,7 +3,6 @@ let mapleader=" "
 set encoding=utf-8
 
 "为防止在有些环境中无法识别，请务必将所有前导符写成<Leader>
-"而非<Leader>
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>wq :wq<CR>
@@ -27,7 +26,6 @@ nmap <Leader>snn :set nonu<CR>
 
 nnoremap <Leader>o o<Esc>0"_D
 nnoremap <Leader>O O<Esc>0"_D
-
 
 "折叠
 nmap zu zO
@@ -61,9 +59,7 @@ set backspace=2
 set autoindent
 set showmatch
 
-
 set nocompatible " 关闭vi兼容模式
-
 
 " Vundle插件管理配置
 " Vundle可管理的插件分为三类
@@ -96,8 +92,6 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'mattn/emmet-vim'
 call vundle#end()
-
-
 
 
 "主题设置
@@ -155,7 +149,7 @@ let g:ycm_sematic_triggers={
             \}
 set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"    "回车即选中当前项
 "上下左右键的行为 会显示其他信息
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
@@ -232,12 +226,9 @@ let g:user_emmet_leader_key='<c-e>' "emmet插件触发leader键Ctrl+e
 "<c-e>k：删除当前标签
 "<c-e>/ :注释html
 
-
 "前端设置
 let g:syntastic_javsacript_checkers = ['eslint']
 let javascript_enable_domhtmlcss = 1
-
-
 
 "<F5>编译与运行
 "python

@@ -3,7 +3,6 @@ let mapleader=" "
 set encoding=utf-8
 
 "为防止在有些环境中无法识别，请务必将所有前导符写成<Leader>
-"而非<Leader>
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 nmap <Leader>wq :wq<CR>
@@ -18,8 +17,15 @@ inoremap <c-n> <c-o>o
 inoremap <c-d> <c-o>s
 inoremap <c-b> <backspace>
 
+"force write
+nmap <Leader>fw :w !sudo tee %<CR>
 
+"show line num
+nmap <Leader>sn :set nu<CR>
+nmap <Leader>snn :set nonu<CR>
 
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
 
 "折叠
 nmap zu zO
@@ -53,9 +59,7 @@ set backspace=2
 set autoindent
 set showmatch
 
-
 set nocompatible " 关闭vi兼容模式
-
 
 " Vundle插件管理配置
 " Vundle可管理的插件分为三类
@@ -90,8 +94,6 @@ Plugin 'mattn/emmet-vim'
 call vundle#end()
 
 
-
-
 "主题设置
 if has('gui_running')
     set background=dark
@@ -118,17 +120,17 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 "启用tab功能
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <Leader>1 <Plug>AirlineSelectTab1
-nmap <Leader>2 <Plug>AirlineSelectTab2
-nmap <Leader>3 <Plug>AirlineSelectTab3
-nmap <Leader>4 <Plug>AirlineSelectTab4
-nmap <Leader>5 <Plug>AirlineSelectTab5
-nmap <Leader>6 <Plug>AirlineSelectTab6
-nmap <Leader>7 <Plug>AirlineSelectTab7
-nmap <Leader>8 <Plug>AirlineSelectTab8
-nmap <Leader>9 <Plug>AirlineSelectTab9
-nmap <Leader>th <Plug>AirlineSelectPrevTab
-nmap <Leader>tl <Plug>AirlineSelectNextTab
+nmap t1 <Plug>AirlineSelectTab1
+nmap t2 <Plug>AirlineSelectTab2
+nmap t3 <Plug>AirlineSelectTab3
+nmap t4 <Plug>AirlineSelectTab4
+nmap t5 <Plug>AirlineSelectTab5
+nmap t6 <Plug>AirlineSelectTab6
+nmap t7 <Plug>AirlineSelectTab7
+nmap t8 <Plug>AirlineSelectTab8
+nmap t9 <Plug>AirlineSelectTab9
+nmap th <Plug>AirlineSelectPrevTab
+nmap tl <Plug>AirlineSelectNextTab
 
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
@@ -209,7 +211,10 @@ map <Leader>s <Plug>(easymotion-s)
 "NerdCommenter配置
 "插入模式进行注释
 imap <C-c> <plug>NERDCommenterInsert 
-
+"<leader>cc   加注释
+"<leader>cu   解开注释
+"<leader>c<space>  加上/解开注释, 智能判断
+"<leader>cy   先复制, 再注解(p可以进行黏贴)
 
 "Emmet插件配置，该插件可以自动插入snippets
 let g:user_emmet_mode='a'
@@ -221,12 +226,9 @@ let g:user_emmet_leader_key='<c-e>' "emmet插件触发leader键Ctrl+e
 "<c-e>k：删除当前标签
 "<c-e>/ :注释html
 
-
 "前端设置
 let g:syntastic_javsacript_checkers = ['eslint']
 let javascript_enable_domhtmlcss = 1
-
-
 
 "<F5>编译与运行
 "python
