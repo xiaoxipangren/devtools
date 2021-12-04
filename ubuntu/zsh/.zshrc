@@ -96,11 +96,10 @@ FINISH="%{$terminfo[sgr0]%}"
 #}}}
  
 #命令提示符
-RPROMPT=$(echo "$RED%D %T$FINISH")
-PROMPT=$(echo "$CYAN%n@$YELLOW%M:$GREEN%/$_YELLOW>$FINISH ")
+PROMPT=$(echo "$CYAN%n$YELLOW@%M:$GREEN%/")
+PROMPT+='%{$reset_color%}$(git_prompt_info)'
+PROMPT+='$_YELLOW>$FINISH'
  
-#PROMPT=$(echo "$BLUE%M$GREEN%/
-#$CYAN%n@$BLUE%M:$GREEN%/$_YELLOW>>>$FINISH ")
 #标题栏、任务栏样式{{{
 case $TERM in (*xterm*|*rxvt*|(dt|k|E)term)
 precmd () { print -Pn "\e]0;%n@%M//%/\a" }
