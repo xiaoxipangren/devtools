@@ -25,6 +25,9 @@ nmap <Leader>fw :w !sudo tee %<CR>
 nmap <Leader>sn :set nu<CR>
 nmap <Leader>snn :set nonu<CR>
 
+nnoremap <Leader>o o<Esc>0"_D
+nnoremap <Leader>O O<Esc>0"_D
+
 
 "折叠
 nmap zu zO
@@ -152,7 +155,7 @@ let g:ycm_sematic_triggers={
             \}
 set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"    "回车即选中当前项
+inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 "上下左右键的行为 会显示其他信息
 inoremap <expr> <Down>     pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr> <Up>       pumvisible() ? "\<C-p>" : "\<Up>"
@@ -213,7 +216,7 @@ map <Leader>s <Plug>(easymotion-s)
 
 "NerdCommenter配置
 "插入模式进行注释
-imap <C-m> <plug>NERDCommenterInsert 
+imap <C-c> <plug>NERDCommenterInsert 
 "<leader>cc   加注释
 "<leader>cu   解开注释
 "<leader>c<space>  加上/解开注释, 智能判断

@@ -3,7 +3,7 @@
 
 #安装git
 brew install vim
-
+brew install coreutils
 echo "编译安装完成，将进行vim安装后配置"
 
 #安装后配置
@@ -27,12 +27,10 @@ echo "配置vim插件"
 
 vim +PluginInstall +quit +quit
 
-
-path=`pwd`
 echo "配置YCM插件"
 cd $home"/.vim/bundle/YouCompleteMe"
 #YCM本身支持python2或者python3，将视系统的python环境自动配置YCM的python解释器
 git submodule update --init --recursive --depth 1
-./install.py
+./install.py --all
 
 echo "安装完成,请参考.vimrc中的说明文件使用快捷键"
