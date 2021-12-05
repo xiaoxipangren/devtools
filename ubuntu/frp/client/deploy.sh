@@ -13,7 +13,8 @@ cp config.ini frpc start.sh $dir/
 
 cp frpc.service  $service
 
-systemctl daemon-reload
+sudo systemctl daemon-reload
+sudo systemctl enable frpc
 systemctl start frpc
 
 

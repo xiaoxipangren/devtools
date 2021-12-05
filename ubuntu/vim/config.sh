@@ -15,6 +15,8 @@ then
     rm -rf $vundle
 fi
 
+sudo apt install cmake build-essentisl python python3 python-dev python3-dev
+
 echo "下载Vundle插件"
 git clone https://github.com/gmarik/vundle.git $vundle
 
@@ -27,6 +29,6 @@ path=`pwd`
 echo "配置YCM插件"
 cd $HOME"/.vim/bundle/YouCompleteMe"
 git submodule update --init --recursive
-./install.py --all
+./install.py 
 
 echo "安装完成,请参考.vimrc中的说明文件使用快捷键"
