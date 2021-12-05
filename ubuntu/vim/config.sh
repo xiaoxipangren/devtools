@@ -15,7 +15,7 @@ then
     rm -rf $vundle
 fi
 
-sudo apt install cmake build-essentisl python python3 python-dev python3-dev
+sudo apt install cmake build-essential python python3 python-dev python3-dev
 
 echo "下载Vundle插件"
 git clone https://github.com/gmarik/vundle.git $vundle
