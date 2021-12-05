@@ -10,7 +10,7 @@
 
 sudo apt install libncurses5-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
-   python3-dev ruby-dev lua5.1 lua5.1-dev git
+   python3-dev ruby-dev lua5.1 lua5.1-dev git -y
 
 
 #卸载旧版本vim
